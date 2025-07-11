@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Abdurrahman Naccar",
+    "title": "Software Developer",
+    "description": "Passionate about building robust, user-friendly applications with Flutter, C# (.NET), and SQL Server. Crafting mobile and desktop solutions that solve real-world problems.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "description1": "I'm Abdurrahman Naccar, a passionate software developer focused on building robust, user-friendly applications. My main expertise lies in Flutter, C# (.NET), and SQL Server, and I enjoy crafting both mobile and desktop solutions that solve real-world problems.",
+    "description2": "Currently expanding my experience through hands-on projects and an internship involving Logo GO 3, I've developed applications that include features like secure user authentication, API integrations, data filtering, and state management with BLoC. I'm always exploring better ways to structure code, optimize UI/UX, and write clean, maintainable software.",
+    "description3": "Whether I'm debugging a complex issue in Flutter, designing SQL queries for business logic, or creating interactive dashboards, I approach each challenge with a strong problem-solving mindset and attention to detail. Let's build something meaningful together.",
+    "stats": {
+      "projects": "Projects Completed",
+      "experience": "Years Experience",
+      "satisfaction": "Client Satisfaction"
+    }
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "categories": {
+      "mobile": "Mobile Development",
+      "desktop": "Desktop App Development",
+      "backend": "Backend Development",
+      "database": "Database Management",
+      "web": "Web Technologies",
+      "frameworks": "Frameworks & Libraries"
+    }
+  },
+  "projects": {
+  "title": "Featured Projects",
+  "reporting": {
+    "title": "Reporting Application",
+    "description": "A comprehensive reporting system with user-based authorization using Flutter and ASP.NET Web API. Features responsive UI and dynamic SQL query execution."
+  },
+  "solutionCenter": {
+    "title": "Solution Center Platform",
+    "description": "An internal technical support platform for managing problem solutions with multi-format content support and advanced search functionality."
+  }
+},
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's work together",
+    "description": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "send": "Send Message"
+    }
+  }
+}

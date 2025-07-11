@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, Ben",
+    "name": "Abdurrahman Naccar",
+    "title": "Yazılım Geliştirici",
+    "description": "Flutter, C# (.NET) ve SQL Server ile sağlam, kullanıcı dostu uygulamalar geliştirme konusunda tutkulu. Gerçek dünya problemlerini çözen mobil ve masaüstü çözümler üretiyorum.",
+    "viewWork": "Çalışmalarımı Gör",
+    "getInTouch": "İletişime Geç"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "description1": "Ben Abdurrahman Naccar, sağlam ve kullanıcı dostu uygulamalar geliştirmeye odaklanan tutkulu bir yazılım geliştiricisiyim. Ana uzmanlığım Flutter, C# (.NET) ve SQL Server'da yatıyor ve gerçek dünya problemlerini çözen mobil ve masaüstü çözümler üretmekten keyif alıyorum.",
+    "description2": "Şu anda Logo GO 3 içeren uygulamalı projeler ve staj aracılığıyla deneyimimi genişletiyorum. Güvenli kullanıcı kimlik doğrulama, API entegrasyonları, veri filtreleme ve BLoC ile durum yönetimi gibi özellikler içeren uygulamalar geliştirdim. Kodu yapılandırmanın, UI/UX'i optimize etmenin ve temiz, sürdürülebilir yazılım yazmanın daha iyi yollarını sürekli araştırıyorum.",
+    "description3": "Flutter'da karmaşık bir sorunu çözüyor, iş mantığı için SQL sorguları tasarlıyor veya etkileşimli panolar oluşturuyor olsam da, her zorluğa güçlü bir problem çözme zihniyeti ve detaylara dikkat ile yaklaşıyorum. Birlikte anlamlı bir şey inşa edelim.",
+    "stats": {
+      "projects": "Tamamlanan Projeler",
+      "experience": "Yıl Deneyim",
+      "satisfaction": "Müşteri Memnuniyeti"
+    }
+  },
+  "skills": {
+    "title": "Yetenekler ve Uzmanlık",
+    "categories": {
+      "mobile": "Mobil Geliştirme",
+      "desktop": "Masaüstü Uygulama Geliştirme",
+      "backend": "Backend Geliştirme",
+      "database": "Veritabanı Yönetimi",
+      "web": "Web Teknolojileri",
+      "frameworks": "Framework'ler ve Kütüphaneler"
+    }
+  },
+  "projects": {
+  "title": "Öne Çıkan Projeler",
+  "reporting": {
+    "title": "Raporlama Uygulaması",
+    "description": "Flutter ve ASP.NET Web API kullanarak kullanıcı tabanlı yetkilendirme ile kapsamlı raporlama sistemi. Duyarlı UI ve dinamik SQL sorgu yürütme özellikleri."
+  },
+  "solutionCenter": {
+    "title": "Çözüm Merkezi Platformu",
+    "description": "Çok formatlı içerik desteği ve gelişmiş arama işlevselliği ile problem çözümlerini yönetmek için dahili teknik destek platformu."
+  }
+},
+  "contact": {
+    "title": "İletişime Geçin",
+    "subtitle": "Birlikte çalışalım",
+    "description": "Yeni fırsatlar ve heyecan verici projelerle her zaman ilgileniyorum. Bir sorunuz varsa veya sadece merhaba demek istiyorsanız, çekinmeden ulaşın!",
+    "form": {
+      "name": "Adınız",
+      "email": "E-postanız",
+      "message": "Mesajınız",
+      "send": "Mesaj Gönder"
+    }
+  }
+}
