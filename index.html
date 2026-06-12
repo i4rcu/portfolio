@@ -1,13 +1,630 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdurrahman Naccar — Software Engineer</title>
+  <meta name="description" content="Abdurrahman Naccar — Software Engineer. Flutter, ASP.NET Core, SQL Server & AI. Building enterprise ERP systems, mobile apps and AI-powered tools." />
+  <meta name="theme-color" content="#050507" />
+  <meta property="og:title" content="Abdurrahman Naccar — Software Engineer" />
+  <meta property="og:description" content="Enterprise systems, mobile apps & AI-powered tools. Flutter · .NET · SQL · RAG." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a78bfa'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%23050507'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-size='34' font-weight='900' text-anchor='middle' fill='url(%23g)'%3EAN%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <noscript><style>.preloader{display:none!important}[data-reveal],.char,.w{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div class="preloader" id="preloader">
+    <div class="pre-inner">
+      <div class="pre-name mono">ABDURRAHMAN&nbsp;NACCAR</div>
+      <div class="pre-count" id="preCount">0</div>
+      <div class="pre-bar"><span id="preBar"></span></div>
+      <div class="pre-tag mono" data-i18n="pre.tag">initializing experience…</div>
+    </div>
+  </div>
+
+  <!-- ══════════ BACKGROUND ══════════ -->
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="bg-vignette" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ══════════ CURSOR ══════════ -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ══════════ SCROLL PROGRESS ══════════ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav-logo" data-hover aria-label="Home">
+      <span class="logo-mark">AN</span><span class="logo-dot">.</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about" data-nav="about" data-hover><span class="mono nav-num">01</span><span data-i18n="nav.about">About</span></a>
+      <a href="#experience" data-nav="experience" data-hover><span class="mono nav-num">02</span><span data-i18n="nav.experience">Experience</span></a>
+      <a href="#projects" data-nav="projects" data-hover><span class="mono nav-num">03</span><span data-i18n="nav.projects">Projects</span></a>
+      <a href="#skills" data-nav="skills" data-hover><span class="mono nav-num">04</span><span data-i18n="nav.skills">Skills</span></a>
+      <a href="#contact" data-nav="contact" data-hover><span class="mono nav-num">05</span><span data-i18n="nav.contact">Contact</span></a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en" data-hover>EN</button>
+        <button class="lang-btn" data-lang="tr" data-hover>TR</button>
+        <span class="lang-pill" aria-hidden="true"></span>
+      </div>
+      <a href="#contact" class="btn btn-small btn-grad" data-magnetic data-hover><span data-i18n="nav.cta">Let's talk</span></a>
+      <button class="burger" id="burger" aria-label="Menu" data-hover><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- ══════════ MOBILE MENU ══════════ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mm-links">
+      <a href="#about" class="mm-link"><span class="mono">01</span><span data-i18n="nav.about">About</span></a>
+      <a href="#experience" class="mm-link"><span class="mono">02</span><span data-i18n="nav.experience">Experience</span></a>
+      <a href="#projects" class="mm-link"><span class="mono">03</span><span data-i18n="nav.projects">Projects</span></a>
+      <a href="#skills" class="mm-link"><span class="mono">04</span><span data-i18n="nav.skills">Skills</span></a>
+      <a href="#contact" class="mm-link"><span class="mono">05</span><span data-i18n="nav.contact">Contact</span></a>
+    </nav>
+    <div class="mm-footer mono">abdurrahmanyos23@gmail.com</div>
+  </div>
+
+  <main id="content">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="hero-badge" data-hero="badge">
+            <span class="pulse-dot"></span>
+            <span class="mono" data-i18n="hero.badge">Open to new opportunities</span>
+          </div>
+
+          <h1 class="hero-title" aria-label="Abdurrahman Naccar">
+            <span class="line line-1 split-chars">ABDURRAHMAN</span>
+            <span class="line line-2 split-chars">NACCAR</span>
+          </h1>
+
+          <div class="hero-roles" data-hero="roles">
+            <span class="mono roles-prefix">&gt;_</span>
+            <span class="scramble-text mono" id="scrambleRole">SOFTWARE ENGINEER</span>
+            <span class="caret mono">▌</span>
+          </div>
+
+          <p class="hero-tagline" data-hero="tagline" data-i18n="hero.tagline">
+            I build enterprise-grade systems — from ERP platforms and mobile apps
+            to AI tools that turn plain language into live data.
+          </p>
+
+          <div class="hero-ctas" data-hero="ctas">
+            <a href="#projects" class="btn btn-grad" data-magnetic data-hover>
+              <span data-i18n="hero.cta1">View my work</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost" data-magnetic data-hover>
+              <span data-i18n="hero.cta2">Get in touch</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-chips" aria-hidden="true">
+          <div class="chip chip-1 float-el"><span class="chip-ico">◈</span> Flutter</div>
+          <div class="chip chip-2 float-el"><span class="chip-ico">⬡</span> .NET Core</div>
+          <div class="chip chip-3 float-el"><span class="chip-ico">▣</span> SQL Server</div>
+          <div class="chip chip-4 float-el"><span class="chip-ico">✦</span> AI / RAG</div>
+          <div class="chip chip-5 float-el"><span class="chip-ico">⌁</span> Node.js</div>
+        </div>
+      </div>
+
+      <div class="hero-side mono" aria-hidden="true">GAZİANTEP — TÜRKİYE · 37.06°N 37.38°E</div>
+
+      <div class="scroll-hint" data-hero="hint" aria-hidden="true">
+        <span class="mono" data-i18n="hero.scroll">scroll</span>
+        <span class="scroll-line"><i></i></span>
+      </div>
+    </section>
+
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>FLUTTER ✦ ASP.NET CORE ✦ C# ✦ SQL SERVER ✦ NODE.JS ✦ MONGODB ✦ FIREBASE ✦ PYTHON ✦ AI &amp; RAG ✦ SIGNALR ✦ CLEAN ARCHITECTURE ✦ EF CORE ✦&nbsp;</span>
+        <span>FLUTTER ✦ ASP.NET CORE ✦ C# ✦ SQL SERVER ✦ NODE.JS ✦ MONGODB ✦ FIREBASE ✦ PYTHON ✦ AI &amp; RAG ✦ SIGNALR ✦ CLEAN ARCHITECTURE ✦ EF CORE ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="section" id="about">
+      <div class="ghost-word" data-speed="-8" aria-hidden="true">ABOUT</div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label mono" data-i18n="about.label">01 — About me</span>
+          <h2 class="section-title split-words" data-i18n="about.title">I turn complex problems into clean, living software.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p data-reveal data-i18n="about.p1">
+              I'm Abdurrahman — a software engineer based in Gaziantep, Türkiye.
+              I build full-stack systems: Flutter on the front, ASP.NET Core and
+              Node.js behind, SQL Server holding it all together.
+            </p>
+            <p data-reveal data-i18n="about.p2">
+              From enterprise ERP platforms running real factories to AI assistants
+              that translate plain questions into safe SQL, I care about software
+              that is fast, secure and genuinely useful. Currently engineering ERP
+              systems at Speed of Light.
+            </p>
+
+            <div class="about-cards" data-reveal-group>
+              <div class="info-card" data-hover>
+                <span class="ic-ico">🎓</span>
+                <div>
+                  <strong data-i18n="about.edu">Atatürk University</strong>
+                  <span data-i18n="about.eduSub">B.Sc. Software Engineering · GPA 3.23 / 4.0 · 2022–2026</span>
+                </div>
+              </div>
+              <div class="info-card" data-hover>
+                <span class="ic-ico">📍</span>
+                <div>
+                  <strong data-i18n="about.loc">Gaziantep, Türkiye</strong>
+                  <span data-i18n="about.locSub">Open to remote &amp; hybrid roles</span>
+                </div>
+              </div>
+              <div class="info-card" data-hover>
+                <span class="ic-ico">🌐</span>
+                <div>
+                  <strong data-i18n="about.langs">Arabic · Turkish · English</strong>
+                  <span data-i18n="about.langsSub">Native · C1 · B1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid" data-reveal-group>
+            <div class="stat">
+              <span class="stat-num"><span class="counter" data-count="2">0</span><span class="stat-suffix">+</span></span>
+              <span class="stat-label" data-i18n="about.s1">Years of experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"><span class="counter" data-count="10">0</span><span class="stat-suffix">+</span></span>
+              <span class="stat-label" data-i18n="about.s2">Projects built</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"><span class="counter" data-count="20">0</span><span class="stat-suffix">+</span></span>
+              <span class="stat-label" data-i18n="about.s3">Technologies used</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num"><span class="counter" data-count="3">0</span><span class="stat-suffix"></span></span>
+              <span class="stat-label" data-i18n="about.s4">Spoken languages</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ EXPERIENCE ══════════ -->
+    <section class="section" id="experience">
+      <div class="ghost-word" data-speed="10" aria-hidden="true">CAREER</div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label mono" data-i18n="exp.label">02 — Experience</span>
+          <h2 class="section-title split-words" data-i18n="exp.title">Where I've left my mark.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-line" aria-hidden="true"><span class="tl-fill" id="tlFill"></span></div>
+
+          <article class="tl-item" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass" data-hover>
+              <div class="tl-top">
+                <span class="tl-date mono" data-i18n="exp.j1.date">Feb 2026 — Present</span>
+                <span class="tl-badge mono" data-i18n="exp.now">NOW</span>
+              </div>
+              <h3 class="tl-role" data-i18n="exp.j1.role">Software Engineer</h3>
+              <span class="tl-company grad-text">Speed of Light — Gaziantep</span>
+              <p data-i18n="exp.j1.desc">
+                Building an enterprise ERP end-to-end: ASP.NET Core Web API services,
+                desktop-grade Flutter UIs and high-performance SQL Server reporting
+                infrastructure for sales, stock, production and invoicing.
+              </p>
+              <ul class="tl-list">
+                <li data-i18n="exp.j1.b1">Sales, inventory, customer-account &amp; production modules</li>
+                <li data-i18n="exp.j1.b2">Authentication, licensing &amp; data-security processes</li>
+                <li data-i18n="exp.j1.b3">Integrations with existing ERP &amp; Logo systems</li>
+              </ul>
+              <div class="tags"><span>ASP.NET Core</span><span>Flutter</span><span>SQL Server</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass" data-hover>
+              <div class="tl-top">
+                <span class="tl-date mono" data-i18n="exp.j2.date">Oct 2025 — Jan 2026</span>
+              </div>
+              <h3 class="tl-role" data-i18n="exp.j2.role">System Administrator</h3>
+              <span class="tl-company grad-text">Affura Plast — Gaziantep</span>
+              <p data-i18n="exp.j2.desc">
+                Kept a factory's digital backbone alive: servers, network security,
+                user access management, backups and recovery, firewall configuration
+                and hands-on IT support.
+              </p>
+              <ul class="tl-list">
+                <li data-i18n="exp.j2.b1">Server installation, maintenance &amp; monitoring</li>
+                <li data-i18n="exp.j2.b2">Backup / disaster-recovery operations</li>
+                <li data-i18n="exp.j2.b3">Firewall &amp; network security configuration</li>
+              </ul>
+              <div class="tags"><span>Windows Server</span><span>Networking</span><span>Security</span></div>
+            </div>
+          </article>
+
+          <article class="tl-item" data-reveal>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-card glass" data-hover>
+              <div class="tl-top">
+                <span class="tl-date mono" data-i18n="exp.j3.date">Feb 2024 — Jun 2025</span>
+              </div>
+              <h3 class="tl-role" data-i18n="exp.j3.role">Software Developer</h3>
+              <span class="tl-company grad-text">Mena Bilişim — Erzurum</span>
+              <p data-i18n="exp.j3.desc">
+                Developed enterprise backend services with ASP.NET Core Web API,
+                designed optimized SQL Server databases and shipped Flutter mobile
+                apps with the BLoC pattern.
+              </p>
+              <ul class="tl-list">
+                <li data-i18n="exp.j3.b1">Mobile–backend integration &amp; API lifecycle management</li>
+                <li data-i18n="exp.j3.b2">Authentication, license validation &amp; data security</li>
+                <li data-i18n="exp.j3.b3">Maintenance, enhancements &amp; bug fixing on live projects</li>
+              </ul>
+              <div class="tags"><span>ASP.NET Core</span><span>Flutter</span><span>BLoC</span><span>SQL Server</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROJECTS ══════════ -->
+    <section class="section" id="projects">
+      <div class="ghost-word" data-speed="-10" aria-hidden="true">WORK</div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label mono" data-i18n="proj.label">03 — Projects</span>
+          <h2 class="section-title split-words" data-i18n="proj.title">Selected builds, alive and kicking.</h2>
+        </div>
+
+        <!-- ── AffuraAI ── -->
+        <article class="project" data-reveal>
+          <div class="project-visual" data-tilt>
+            <div class="pv-scene pv-ai glass">
+              <div class="pv-bar"><i></i><i></i><i></i><span class="mono">AffuraAI — NL2SQL</span></div>
+              <div class="pv-body">
+                <div class="pv-bubble user mono">stock level for PET rolls?</div>
+                <div class="pv-bubble ai"><span class="typing"><i></i><i></i><i></i></span></div>
+                <div class="pv-code mono">SELECT material, qty FROM stock <em>✓ guarded</em></div>
+                <div class="pv-chart">
+                  <i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:35%"></i>
+                  <i style="--h:88%"></i><i style="--h:55%"></i><i style="--h:74%"></i>
+                </div>
+              </div>
+            </div>
+            <div class="tilt-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-index mono">01</span>
+            <div class="project-meta mono"><span data-i18n="proj.p1.cat">AI · ERP · RAG</span><span>2026</span></div>
+            <h3 class="project-name">AffuraAI</h3>
+            <p class="project-desc" data-i18n="proj.p1.desc">
+              An AI layer on top of a live ERP. Ask a question in plain language —
+              a RAG pipeline retrieves the right schemas, the LLM writes SQL, a
+              security guard validates it, and results stream back as live charts,
+              token by token. ChatGPT for your factory.
+            </p>
+            <ul class="project-points">
+              <li data-i18n="proj.p1.h1">NL2SQL pipeline with vector-based RAG retrieval</li>
+              <li data-i18n="proj.p1.h2">SQL Guard — SELECT-only, read-only execution context</li>
+              <li data-i18n="proj.p1.h3">Real-time SSE streaming with auto-generated charts</li>
+              <li data-i18n="proj.p1.h4">Full i18n incl. RTL Arabic &amp; Turkish</li>
+            </ul>
+            <div class="tags"><span>ASP.NET Core 10</span><span>Flutter</span><span>Ollama</span><span>RAG</span><span>MSSQL</span><span>SSE</span></div>
+          </div>
+        </article>
+
+        <!-- ── ERPV3 ── -->
+        <article class="project project-flip" data-reveal>
+          <div class="project-visual" data-tilt>
+            <div class="pv-scene pv-erp glass">
+              <div class="pv-bar"><i></i><i></i><i></i><span class="mono">ERPV3 — Production Hub</span></div>
+              <div class="pv-body pv-erp-grid">
+                <div class="pv-tile">
+                  <span class="mono pv-tile-label">OUTPUT</span>
+                  <span class="pv-tile-num mono">14.2k</span>
+                  <span class="pv-spark"><i></i><i></i><i></i><i></i><i></i></span>
+                </div>
+                <div class="pv-tile">
+                  <span class="mono pv-tile-label">STOCK</span>
+                  <div class="pv-ring"><span class="mono">87%</span></div>
+                </div>
+                <div class="pv-rows">
+                  <div class="pv-row shimmer"><span class="pv-pill ok mono">OK</span><i></i></div>
+                  <div class="pv-row shimmer"><span class="pv-pill warn mono">LOW</span><i></i></div>
+                  <div class="pv-row shimmer"><span class="pv-pill ok mono">OK</span><i></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="tilt-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-index mono">02</span>
+            <div class="project-meta mono"><span data-i18n="proj.p2.cat">Enterprise · Manufacturing</span><span>2026</span></div>
+            <h3 class="project-name">ERPV3 — AffuraPlast</h3>
+            <p class="project-desc" data-i18n="proj.p2.desc">
+              A full ERP running a real plastics factory — from sales orders and
+              procurement to work orders, quality gates and shipment. Clean
+              Architecture + DDD, with a dynamic permission engine that syncs code
+              to database at startup and SignalR realtime everywhere.
+            </p>
+            <ul class="project-points">
+              <li data-i18n="proj.p2.h1">Dynamic permission-based authorization with in-memory caching</li>
+              <li data-i18n="proj.p2.h2">Stock availability algorithm with proactive shortage alerts</li>
+              <li data-i18n="proj.p2.h3">JWT password revocation &amp; full audit logging</li>
+              <li data-i18n="proj.p2.h4">QuestPDF / JsReport reporting engine</li>
+            </ul>
+            <div class="tags"><span>.NET 8</span><span>DDD</span><span>SignalR</span><span>EF Core</span><span>JWT</span><span>Flutter</span></div>
+          </div>
+        </article>
+
+        <!-- ── Magazam ── -->
+        <article class="project" data-reveal>
+          <div class="project-visual" data-tilt>
+            <div class="pv-scene pv-shop glass">
+              <div class="pv-bar"><i></i><i></i><i></i><span class="mono">Magazam — Analytics</span></div>
+              <div class="pv-body">
+                <div class="pv-products">
+                  <div class="pv-product"><span class="pv-sq sq-a"></span><i></i><i class="short"></i></div>
+                  <div class="pv-product star"><span class="pv-badge mono">TOP</span><span class="pv-sq sq-b"></span><i></i><i class="short"></i></div>
+                  <div class="pv-product"><span class="pv-sq sq-c"></span><i></i><i class="short"></i></div>
+                </div>
+                <svg class="pv-graph" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline class="pv-line" points="0,50 30,42 60,46 90,28 120,32 150,14 200,6" />
+                  <polyline class="pv-line-ghost" points="0,54 30,50 60,52 90,44 120,47 150,38 200,33" />
+                </svg>
+              </div>
+            </div>
+            <div class="tilt-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-index mono">03</span>
+            <div class="project-meta mono"><span data-i18n="proj.p3.cat">Retail · Mobile · Cloud</span><span>2025</span></div>
+            <h3 class="project-name">Magazam</h3>
+            <p class="project-desc" data-i18n="proj.p3.desc">
+              Smart retail management for small businesses — the bridge between
+              spreadsheets and expensive POS systems. Real-time inventory, secure
+              sales and a hybrid analytics engine: Cloud Functions crunch
+              best-sellers server-side, with an offline Dart fallback so business
+              never stops.
+            </p>
+            <ul class="project-points">
+              <li data-i18n="proj.p3.h1">Hybrid cloud / client analytics with automatic fallback</li>
+              <li data-i18n="proj.p3.h2">Real-time Firestore sync across devices</li>
+              <li data-i18n="proj.p3.h3">Repository-pattern architecture, fully testable</li>
+            </ul>
+            <div class="tags"><span>Flutter</span><span>Firebase</span><span>Cloud Functions</span><span>Provider</span><span>fl_chart</span></div>
+          </div>
+        </article>
+
+        <!-- ── YKS ── -->
+        <article class="project project-flip" data-reveal>
+          <div class="project-visual" data-tilt>
+            <div class="pv-scene pv-yks glass">
+              <div class="pv-bar"><i></i><i></i><i></i><span class="mono">YKS — Study Engine</span></div>
+              <div class="pv-body pv-yks-grid">
+                <svg class="pv-progress" viewBox="0 0 80 80" aria-hidden="true">
+                  <circle class="pv-prog-bg" cx="40" cy="40" r="32" />
+                  <circle class="pv-prog-fg" cx="40" cy="40" r="32" />
+                </svg>
+                <div class="pv-question">
+                  <i class="pv-qline"></i><i class="pv-qline short"></i>
+                  <div class="pv-options">
+                    <span class="mono">A</span><span class="mono correct">B</span><span class="mono">C</span><span class="mono">D</span>
+                  </div>
+                  <div class="pv-net mono">NET 92.5 ▲</div>
+                </div>
+              </div>
+            </div>
+            <div class="tilt-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-index mono">04</span>
+            <div class="project-meta mono"><span data-i18n="proj.p4.cat">AI · EdTech · Mobile</span><span>2025</span></div>
+            <h3 class="project-name" data-i18n="proj.p4.name">YKS Smart Study Assistant</h3>
+            <p class="project-desc" data-i18n="proj.p4.desc">
+              An AI study coach for Türkiye's university entrance exam. DeepSeek
+              generates exam-grade questions in smart batches, GitHub acts as a
+              version-controlled question CMS, and an analytics engine tracks net
+              scores to hunt down weak topics.
+            </p>
+            <ul class="project-points">
+              <li data-i18n="proj.p4.h1">Batched LLM question generation across 426+ concepts</li>
+              <li data-i18n="proj.p4.h2">GitHub-as-a-CMS: versioned question bank via REST API</li>
+              <li data-i18n="proj.p4.h3">Official net-score logic with weak-topic analysis</li>
+            </ul>
+            <div class="tags"><span>Flutter</span><span>Ollama</span><span>DeepSeek</span><span>GitHub API</span><span>Material 3</span></div>
+          </div>
+        </article>
+
+        <!-- ── More ── -->
+        <h3 class="more-title mono" data-i18n="proj.more">+ more builds</h3>
+        <div class="more-grid" data-reveal-group>
+          <a class="more-card glass" data-hover href="#contact">
+            <div class="mc-top"><span class="mono">2025</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+            <h4 data-i18n="proj.m1.name">Solution Center</h4>
+            <p data-i18n="proj.m1.desc">Internal knowledge platform for support teams — solutions in text, PDF, image &amp; link form with advanced search and a full admin panel.</p>
+            <div class="tags"><span>Flutter</span><span>Node.js</span><span>MongoDB</span></div>
+          </a>
+          <a class="more-card glass" data-hover href="#contact">
+            <div class="mc-top"><span class="mono">2025</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+            <h4 data-i18n="proj.m2.name">Invoicing System</h4>
+            <p data-i18n="proj.m2.desc">Cross-platform app for customers, sales and invoices — custom auth API, full CRUD and clean BLoC architecture.</p>
+            <div class="tags"><span>Flutter</span><span>Node.js</span><span>BLoC</span></div>
+          </a>
+          <a class="more-card glass" data-hover href="#contact">
+            <div class="mc-top"><span class="mono">2024</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
+            <h4 data-i18n="proj.m3.name">Logo Reporting App</h4>
+            <p data-i18n="proj.m3.desc">Per-user authorized reporting integrated with Logo software — predefined SQL executed via API into dynamic, responsive tables.</p>
+            <div class="tags"><span>Flutter</span><span>ASP.NET</span><span>SQL Server</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SKILLS ══════════ -->
+    <section class="section" id="skills">
+      <div class="ghost-word" data-speed="8" aria-hidden="true">STACK</div>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label mono" data-i18n="skills.label">04 — Skills</span>
+          <h2 class="section-title split-words" data-i18n="skills.title">The arsenal I build with.</h2>
+        </div>
+
+        <div class="skills-grid" data-reveal-group>
+          <div class="skill-group glass" data-hover>
+            <h4><span class="sg-ico">◈</span><span data-i18n="skills.g1">Mobile &amp; Frontend</span></h4>
+            <div class="chips">
+              <span>Flutter</span><span>Dart</span><span>BLoC</span><span>Provider</span>
+              <span>Material 3</span><span>Responsive UI</span><span>UI / UX</span>
+            </div>
+          </div>
+          <div class="skill-group glass" data-hover>
+            <h4><span class="sg-ico">⬡</span><span data-i18n="skills.g2">Backend &amp; APIs</span></h4>
+            <div class="chips">
+              <span>C#</span><span>ASP.NET Core</span><span>Node.js</span><span>Express</span>
+              <span>PHP</span><span>REST</span><span>SignalR</span><span>SSE</span><span>JWT</span>
+              <span>Clean Architecture</span>
+            </div>
+          </div>
+          <div class="skill-group glass" data-hover>
+            <h4><span class="sg-ico">▣</span><span data-i18n="skills.g3">Databases</span></h4>
+            <div class="chips">
+              <span>SQL Server</span><span>MySQL</span><span>MongoDB</span>
+              <span>Firebase</span><span>Firestore</span><span>EF Core</span>
+            </div>
+          </div>
+          <div class="skill-group glass" data-hover>
+            <h4><span class="sg-ico">✦</span><span data-i18n="skills.g4">AI &amp; Data</span></h4>
+            <div class="chips">
+              <span>Python</span><span>Pandas</span><span>NumPy</span><span>TensorFlow</span>
+              <span>Keras</span><span>RAG</span><span>Fine-tuning</span><span>Ollama</span>
+              <span>Prompt Engineering</span>
+            </div>
+          </div>
+          <div class="skill-group glass" data-hover>
+            <h4><span class="sg-ico">⌁</span><span data-i18n="skills.g5">Core Engineering</span></h4>
+            <div class="chips">
+              <span>C</span><span>C++</span><span>OOP</span><span>Data Structures</span>
+              <span>DDD</span><span>Git</span><span>WinForms</span>
+            </div>
+          </div>
+          <div class="skill-group glass" data-hover>
+            <h4><span class="sg-ico">🌐</span><span data-i18n="skills.g6">Human Languages</span></h4>
+            <div class="lang-bars">
+              <div class="lang-row">
+                <span data-i18n="skills.l1">Arabic</span>
+                <div class="bar"><i class="fill" data-level="100"></i></div>
+                <span class="mono lvl" data-i18n="skills.l1v">Native</span>
+              </div>
+              <div class="lang-row">
+                <span data-i18n="skills.l2">Turkish</span>
+                <div class="bar"><i class="fill" data-level="90"></i></div>
+                <span class="mono lvl">C1</span>
+              </div>
+              <div class="lang-row">
+                <span data-i18n="skills.l3">English</span>
+                <div class="bar"><i class="fill" data-level="60"></i></div>
+                <span class="mono lvl">B1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ MARQUEE 2 ══════════ -->
+    <div class="marquee marquee-rev" aria-hidden="true">
+      <div class="marquee-track">
+        <span>LET'S BUILD ✦ LET'S SHIP ✦ LET'S SCALE ✦ LET'S BUILD ✦ LET'S SHIP ✦ LET'S SCALE ✦&nbsp;</span>
+        <span>LET'S BUILD ✦ LET'S SHIP ✦ LET'S SCALE ✦ LET'S BUILD ✦ LET'S SHIP ✦ LET'S SCALE ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ══════════ CONTACT ══════════ -->
+    <section class="section contact-section" id="contact">
+      <div class="ghost-word" data-speed="-6" aria-hidden="true">CONTACT</div>
+      <div class="container">
+        <span class="section-label mono" data-i18n="contact.label">05 — Contact</span>
+        <h2 class="contact-title">
+          <span class="split-words" data-i18n="contact.t1">LET'S WORK</span><br />
+          <span class="split-words grad-text" data-i18n="contact.t2">TOGETHER.</span>
+        </h2>
+        <p class="contact-sub" data-reveal data-i18n="contact.sub">
+          Have a project, a role, or just an idea that needs an engineer who ships?
+          My inbox is always open.
+        </p>
+
+        <div class="contact-row" data-reveal-group>
+          <a class="contact-big-btn" href="mailto:abdurrahmanyos23@gmail.com" data-magnetic data-hover aria-label="Send email">
+            <span class="cbb-ring" aria-hidden="true"></span>
+            <span class="cbb-text" data-i18n="contact.btn">Say hello</span>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+
+          <div class="contact-links">
+            <a href="mailto:abdurrahmanyos23@gmail.com" class="contact-link glass" data-hover>
+              <span class="cl-label mono" data-i18n="contact.email">EMAIL</span>
+              <span class="cl-value">abdurrahmanyos23@gmail.com</span>
+            </a>
+            <a href="tel:+905373947885" class="contact-link glass" data-hover>
+              <span class="cl-label mono" data-i18n="contact.phone">PHONE</span>
+              <span class="cl-value">+90 537 394 78 85</span>
+            </a>
+            <a href="https://wa.me/905373947885" target="_blank" rel="noopener" class="contact-link glass" data-hover>
+              <span class="cl-label mono">WHATSAPP</span>
+              <span class="cl-value" data-i18n="contact.wa">Message me directly</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="mono" data-i18n="footer.copy">© 2026 Abdurrahman Naccar</span>
+        <span class="footer-mid mono" data-i18n="footer.made">designed &amp; built with an unhealthy amount of animations</span>
+        <button class="to-top mono" id="toTop" data-hover aria-label="Back to top">↑ <span data-i18n="footer.top">TOP</span></button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ══════════ LIBS (CDN) ══════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" integrity="sha384-O55L/6rhHr9CFvrxqv5luxOCcmVaBmETbZbJDP+Do8T0pztTACsFBD/IXCNkj7DV" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" integrity="sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu" crossorigin="anonymous" defer></script>
+
+  <script src="js/i18n.js" defer></script>
+  <script src="js/webgl.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
 </html>
