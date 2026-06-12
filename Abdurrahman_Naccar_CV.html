@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdurrahman Naccar - Resume</title>
+    <style>
+        /* 
+           Dünyaca kabul edilen standart ATS (Applicant Tracking System) dostu CV formatı.
+           Özellikleri: Tek sütun, net başlıklar, gereksiz grafik/ikon barındırmayan, 
+           okunabilirlik ve yazılım tarafından taranabilirlik odaklı.
+        */
+        :root {
+            --text-color: #000000;
+            --link-color: #000000;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: #ffffff;
+            font-size: 11pt; /* Standart CV font boyutu */
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Başlık (İsim ve İletişim) */
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            font-size: 10.5pt;
+        }
+
+        .contact-info a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .separator {
+            margin: 0 6px;
+            color: #666;
+        }
+
+        /* Bölüm Başlıkları */
+        h2 {
+            font-size: 13pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* İçerik Blokları */
+        .section-item {
+            margin-bottom: 16px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 11pt;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            font-size: 11pt;
+            margin-bottom: 4px;
+        }
+
+        .item-date {
+            font-size: 10.5pt;
+        }
+
+        /* Madde İşaretleri (Bullet Points) */
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 4px;
+        }
+
+        li {
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        /* Beceriler Bölümü */
+        .skills-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .skills-list li {
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .skills-list strong {
+            display: inline-block;
+            width: 140px; /* Hizalama için */
+        }
+
+        p.summary {
+            text-align: justify;
+            margin-bottom: 16px;
+        }
+
+        /* Çıktı (Print) Ayarları - PDF için Mükemmel Görünüm */
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+                font-size: 10.5pt;
+            }
+            @page {
+                size: A4;
+                margin: 20mm;
+            }
+            a {
+                text-decoration: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Abdurrahman Naccar</h1>
+        <div class="contact-info">
+            Gaziantep, Türkiye <span class="separator">|</span>
+            <a href="tel:+905373947885">+90 537 394 78 85</a> <span class="separator">|</span>
+            <a href="mailto:abdurrahmanyos23@gmail.com">abdurrahmanyos23@gmail.com</a> <span class="separator">|</span>
+            <a href="https://github.com/i4rcu" target="_blank">github.com/i4rcu</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Summary</h2>
+        <p class="summary">
+            Software Engineer specializing in full-stack development, building enterprise-grade systems from ERP platforms and mobile applications to AI tools. Proficient in Flutter, ASP.NET Core, Node.js, and SQL Server, with a proven track record of delivering secure, scalable, and high-performance solutions.
+        </p>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Speed of Light</span>
+                <span class="item-date">Feb 2026 – Present</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">Software Engineer</span>
+                <span class="item-date">Gaziantep, Türkiye</span>
+            </div>
+            <ul>
+                <li>Building an enterprise ERP end-to-end utilizing ASP.NET Core Web API services, desktop-grade Flutter UIs, and high-performance SQL Server reporting infrastructure.</li>
+                <li>Developing core business modules including sales, inventory, customer-account, and production management.</li>
+                <li>Implementing secure authentication, licensing, and data-security processes to protect sensitive factory data.</li>
+                <li>Engineering robust integrations with existing ERP and Logo software systems.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Affura Plast</span>
+                <span class="item-date">Oct 2025 – Jan 2026</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">System Administrator</span>
+                <span class="item-date">Gaziantep, Türkiye</span>
+            </div>
+            <ul>
+                <li>Maintained the factory's digital infrastructure, overseeing server installation, maintenance, and monitoring.</li>
+                <li>Managed backup and disaster-recovery operations to ensure operational continuity and zero data loss.</li>
+                <li>Configured firewalls, network security protocols, and handled user access management.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Mena Bilişim</span>
+                <span class="item-date">Feb 2024 – Jun 2025</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">Software Developer</span>
+                <span class="item-date">Erzurum, Türkiye</span>
+            </div>
+            <ul>
+                <li>Developed enterprise backend services with ASP.NET Core Web API and designed optimized SQL Server databases.</li>
+                <li>Shipped high-quality Flutter mobile applications utilizing the BLoC pattern for efficient state management.</li>
+                <li>Managed mobile–backend integration, API lifecycles, and data security including JWT authentication and license validation.</li>
+                <li>Provided maintenance, feature enhancements, and bug fixing on live production projects.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Atatürk University</span>
+                <span class="item-date">2022 – 2026</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">B.Sc. in Software Engineering</span>
+                <span class="item-date">Erzurum, Türkiye</span>
+            </div>
+            <ul>
+                <li>Cumulative GPA: 3.23 / 4.0</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Selected Projects</h2>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">AffuraAI (NL2SQL AI Layer)</span>
+                <span class="item-date">2026</span>
+            </div>
+            <div class="item-subtitle">ASP.NET Core 10, Flutter, Ollama, MSSQL, RAG, SSE</div>
+            <ul>
+                <li>Developed an AI layer for a live ERP enabling users to query the database using plain language.</li>
+                <li>Built an NL2SQL pipeline with vector-based RAG retrieval and real-time SSE streaming for live charts.</li>
+                <li>Implemented a "SQL Guard" to ensure a read-only, SELECT-only execution context for data security.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">ERPV3 — AffuraPlast</span>
+                <span class="item-date">2026</span>
+            </div>
+            <div class="item-subtitle">.NET 8, Clean Architecture, SignalR, EF Core, Flutter</div>
+            <ul>
+                <li>Engineered a full ERP system managing sales, procurement, work orders, and quality gates for a plastics factory.</li>
+                <li>Designed dynamic permission-based authorization with in-memory caching and real-time state synchronization via SignalR.</li>
+                <li>Integrated QuestPDF/JsReport for reporting and developed a stock availability algorithm with proactive shortage alerts.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Magazam</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-subtitle">Flutter, Firebase, Cloud Functions</div>
+            <ul>
+                <li>Created a smart retail management application bridging spreadsheets and expensive POS systems for small businesses.</li>
+                <li>Implemented hybrid cloud/client analytics with automatic offline Dart fallback and real-time Firestore synchronization.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">YKS Smart Study Assistant</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-subtitle">Flutter, Ollama, DeepSeek, GitHub API</div>
+            <ul>
+                <li>Built an AI-powered study coach utilizing DeepSeek for batched LLM question generation across 426+ concepts.</li>
+                <li>Leveraged GitHub as a version-controlled CMS via REST API to securely manage the question bank.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+            <li><strong>Languages:</strong> C#, Dart, JavaScript, TypeScript, Python, C++, C, SQL, PHP</li>
+            <li><strong>Mobile & Frontend:</strong> Flutter, BLoC, Provider, Material 3, Responsive UI</li>
+            <li><strong>Backend & APIs:</strong> ASP.NET Core, Node.js, Express, SignalR, SSE, REST, JWT, Clean Architecture, DDD</li>
+            <li><strong>Databases:</strong> SQL Server, MySQL, MongoDB, Firebase, Firestore, EF Core</li>
+            <li><strong>AI & Data:</strong> Pandas, NumPy, TensorFlow, Keras, RAG, Ollama, Prompt Engineering</li>
+            <li><strong>Spoken Languages:</strong> Arabic (Native), Turkish (C1), English (B1)</li>
+        </ul>
+    </section>
+
+</body>
+</html>
