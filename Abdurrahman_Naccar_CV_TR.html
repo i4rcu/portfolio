@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdurrahman Naccar - Özgeçmiş</title>
+    <style>
+        :root {
+            --text-color: #000000;
+            --link-color: #000000;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: #ffffff;
+            font-size: 11pt;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        header { text-align: center; margin-bottom: 24px; }
+        h1 { font-size: 24pt; font-weight: bold; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .contact-info { font-size: 10.5pt; }
+        .contact-info a { color: var(--link-color); text-decoration: none; }
+        .contact-info a:hover { text-decoration: underline; }
+        .separator { margin: 0 6px; color: #666; }
+
+        h2 {
+            font-size: 13pt; font-weight: bold; text-transform: uppercase;
+            border-bottom: 1px solid #000; padding-bottom: 3px;
+            margin-top: 20px; margin-bottom: 12px; letter-spacing: 0.5px;
+        }
+
+        .section-item { margin-bottom: 16px; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .item-title { font-weight: bold; font-size: 11pt; }
+        .item-subtitle { font-style: italic; font-size: 11pt; margin-bottom: 4px; }
+        .item-date { font-size: 10.5pt; }
+
+        ul { list-style-type: disc; margin-left: 20px; margin-top: 4px; }
+        li { margin-bottom: 4px; text-align: justify; }
+
+        .skills-list { list-style: none; margin-left: 0; }
+        .skills-list li { margin-bottom: 6px; text-align: left; }
+        .skills-list strong { display: inline-block; width: 140px; }
+
+        p.summary { text-align: justify; margin-bottom: 16px; }
+
+        @media print {
+            body { padding: 0; max-width: 100%; font-size: 10.5pt; }
+            @page { size: A4; margin: 20mm; }
+            a { text-decoration: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Abdurrahman Naccar</h1>
+        <div class="contact-info">
+            Gaziantep, Türkiye <span class="separator">|</span>
+            <a href="tel:+905373947885">+90 537 394 78 85</a> <span class="separator">|</span>
+            <a href="mailto:abdurrahmanyos23@gmail.com">abdurrahmanyos23@gmail.com</a> <span class="separator">|</span>
+            <a href="https://github.com/i4rcu" target="_blank">github.com/i4rcu</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Özet</h2>
+        <p class="summary">
+            Tam yığın (full-stack) geliştirme alanında uzmanlaşmış, ERP platformlarından mobil uygulamalara ve yapay zeka araçlarına kadar kurumsal düzeyde sistemler inşa eden Yazılım Mühendisi. Flutter, ASP.NET Core, Node.js ve SQL Server teknolojilerinde yetkin; güvenli, ölçeklenebilir ve yüksek performanslı çözümler sunma konusunda kanıtlanmış geçmişe sahip.
+        </p>
+    </section>
+
+    <section>
+        <h2>Deneyim</h2>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Speed of Light</span>
+                <span class="item-date">Şub 2026 – Devam Ediyor</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">Yazılım Mühendisi</span>
+                <span class="item-date">Gaziantep, Türkiye</span>
+            </div>
+            <ul>
+                <li>ASP.NET Core Web API servisleri, masaüstü kalitesinde Flutter arayüzleri ve yüksek performanslı SQL Server raporlama altyapısı kullanarak uçtan uca kurumsal bir ERP sistemi geliştirilmesi.</li>
+                <li>Satış, stok, cari hesap ve üretim yönetimi gibi temel iş modüllerinin inşa edilmesi.</li>
+                <li>Hassas fabrika verilerini korumak için güvenli kimlik doğrulama, lisanslama ve veri güvenliği süreçlerinin uygulanması.</li>
+                <li>Mevcut ERP ve Logo yazılım sistemleriyle sağlam entegrasyonların tasarlanması.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Affura Plast</span>
+                <span class="item-date">Eki 2025 – Oca 2026</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">Sistem Yöneticisi</span>
+                <span class="item-date">Gaziantep, Türkiye</span>
+            </div>
+            <ul>
+                <li>Sunucu kurulumu, bakımı ve izlenmesi dahil olmak üzere fabrikanın dijital altyapısının yönetilmesi.</li>
+                <li>Operasyonel sürekliliği sağlamak ve veri kaybını önlemek için yedekleme ve felaket kurtarma operasyonlarının yürütülmesi.</li>
+                <li>Güvenlik duvarı (firewall), ağ güvenliği protokolleri ve kullanıcı erişim yönetiminin yapılandırılması.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Mena Bilişim</span>
+                <span class="item-date">Şub 2024 – Haz 2025</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">Yazılım Geliştirici</span>
+                <span class="item-date">Erzurum, Türkiye</span>
+            </div>
+            <ul>
+                <li>ASP.NET Core Web API ile kurumsal arka uç (backend) servislerinin geliştirilmesi ve optimize edilmiş SQL Server veritabanlarının tasarlanması.</li>
+                <li>Etkili durum yönetimi (state management) için BLoC mimarisi kullanılarak yüksek kaliteli Flutter mobil uygulamalarının yayınlanması.</li>
+                <li>Mobil-backend entegrasyonu, API yaşam döngüsü ve JWT kimlik doğrulaması ile lisans doğrulama dahil veri güvenliğinin yönetilmesi.</li>
+                <li>Canlı üretim projelerinde bakım, özellik geliştirme ve hata giderme süreçlerinin yürütülmesi.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Eğitim</h2>
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Atatürk Üniversitesi</span>
+                <span class="item-date">2022 – 2026</span>
+            </div>
+            <div class="item-header">
+                <span class="item-subtitle">B.Sc. Yazılım Mühendisliği</span>
+                <span class="item-date">Erzurum, Türkiye</span>
+            </div>
+            <ul>
+                <li>AGNO: 3.23 / 4.0</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Seçilmiş Projeler</h2>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">AffuraAI (NL2SQL Yapay Zeka Katmanı)</span>
+                <span class="item-date">2026</span>
+            </div>
+            <div class="item-subtitle">ASP.NET Core 10, Flutter, Ollama, MSSQL, RAG, SSE</div>
+            <ul>
+                <li>Kullanıcıların doğal dil kullanarak veritabanını sorgulamasına olanak tanıyan, canlı ERP üzerinde çalışan bir yapay zeka katmanı geliştirildi.</li>
+                <li>Vektör tabanlı RAG alımı ve canlı grafikler için gerçek zamanlı SSE akışı (streaming) içeren bir NL2SQL veri hattı kuruldu.</li>
+                <li>Veri güvenliğini sağlamak için salt okunur (read-only) ve sadece SELECT işlemlerine izin veren "SQL Guard" uygulandı.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">ERPV3 — AffuraPlast</span>
+                <span class="item-date">2026</span>
+            </div>
+            <div class="item-subtitle">.NET 8, Clean Architecture, SignalR, EF Core, Flutter</div>
+            <ul>
+                <li>Bir plastik fabrikası için satış, satın alma, iş emirleri ve kalite kontrol süreçlerini yöneten kapsamlı bir ERP sistemi tasarlandı.</li>
+                <li>Bellek içi (in-memory) önbellekleme ve SignalR üzerinden gerçek zamanlı durum senkronizasyonu ile dinamik, izin tabanlı yetkilendirme mimarisi kuruldu.</li>
+                <li>Raporlama için QuestPDF/JsReport entegre edildi ve proaktif eksiklik uyarıları içeren stok durumu algoritması geliştirildi.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">Magazam</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-subtitle">Flutter, Firebase, Cloud Functions</div>
+            <ul>
+                <li>Küçük işletmeler için elektronik tablolar ile pahalı POS sistemleri arasında köprü kuran akıllı bir perakende yönetim uygulaması oluşturuldu.</li>
+                <li>Otomatik çevrimdışı Dart geri dönüşü (fallback) ve gerçek zamanlı Firestore senkronizasyonu ile hibrit bulut/istemci analitiği uygulandı.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">YKS Akıllı Çalışma Asistanı</span>
+                <span class="item-date">2025</span>
+            </div>
+            <div class="item-subtitle">Flutter, Ollama, DeepSeek, GitHub API</div>
+            <ul>
+                <li>426+ kavram üzerinden toplu LLM (Büyük Dil Modeli) soru üretimi için DeepSeek destekli yapay zeka tabanlı bir eğitim asistanı geliştirildi.</li>
+                <li>Soru bankasını güvenli bir şekilde yönetmek için REST API aracılığıyla GitHub'ın sürüm kontrollü bir CMS olarak kullanılması sağlandı.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Teknik Beceriler</h2>
+        <ul class="skills-list">
+            <li><strong>Diller:</strong> C#, Dart, JavaScript, TypeScript, Python, C++, C, SQL, PHP</li>
+            <li><strong>Mobil & Frontend:</strong> Flutter, BLoC, Provider, Material 3, Responsive UI</li>
+            <li><strong>Backend & API'ler:</strong> ASP.NET Core, Node.js, Express, SignalR, SSE, REST, JWT, Clean Architecture, DDD</li>
+            <li><strong>Veritabanları:</strong> SQL Server, MySQL, MongoDB, Firebase, Firestore, EF Core</li>
+            <li><strong>Yapay Zeka & Veri:</strong> Pandas, NumPy, TensorFlow, Keras, RAG, Ollama, Prompt Engineering</li>
+            <li><strong>Konuşulan Lisanlar:</strong> Arapça (Anadil), Türkçe (C1), İngilizce (B1)</li>
+        </ul>
+    </section>
+
+</body>
+</html>
