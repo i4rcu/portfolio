@@ -296,7 +296,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
   line-height: 1.04; letter-spacing: -0.01em;
   text-transform: uppercase; margin-bottom: 28px;
 }
-.hero-title .line { display: block; overflow: hidden; padding-bottom: 0.08em; }
+.hero-title .line { display: block; overflow: hidden; padding-bottom: 0.08em; white-space: nowrap; }
 .hero-title .line-1 {
   /* background and clip moved to .char to avoid WebKit bug hiding transformed children */
 }
