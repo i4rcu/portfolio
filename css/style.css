@@ -34,8 +34,15 @@ body {
   font-family: var(--font-b);
   font-size: 17px;
   line-height: 1.6;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* hard lock against horizontal overflow (mobile-critical) */
+html, body { overflow-x: hidden; }
+@supports (overflow: clip) {
+  html, body { overflow-x: clip; }
+  .section { overflow-x: clip; }
 }
 
 ::selection { background: var(--ac1); color: #07070c; }
@@ -63,13 +70,14 @@ button { font-family: inherit; background: none; border: none; color: inherit; c
 
 /* ════════════ BACKGROUND LAYERS ════════════ */
 #webgl {
-  position: fixed; inset: 0;
+  position: fixed; top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: 0; pointer-events: none;
   opacity: 0.9;
 }
 .bg-vignette {
-  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1; pointer-events: none;
   background:
     radial-gradient(ellipse 90% 60% at 50% 0%, transparent 0%, rgba(5, 5, 7, 0.55) 100%),
     linear-gradient(rgba(5, 5, 7, 0.25), rgba(5, 5, 7, 0.45));
@@ -90,7 +98,8 @@ button { font-family: inherit; background: none; border: none; color: inherit; c
 }
 
 .noise {
-  position: fixed; inset: -50%; z-index: 9000; pointer-events: none;
+  position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+  z-index: 9000; pointer-events: none;
   opacity: 0.05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation: noiseShift 0.6s steps(4) infinite;
@@ -107,10 +116,12 @@ main { position: relative; z-index: 2; }
 
 /* ════════════ PRELOADER ════════════ */
 .preloader {
-  position: fixed; inset: 0; z-index: 10000;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 10000;
   background: var(--bg);
   display: flex; align-items: center; justify-content: center;
 }
+@supports (height: 100dvh) { .preloader { height: 100dvh; } }
 .pre-inner { text-align: center; width: min(420px, 80vw); }
 .pre-name { font-size: 12px; letter-spacing: 0.5em; color: var(--muted); margin-bottom: 22px; }
 .pre-count {
@@ -235,12 +246,14 @@ body.menu-open .burger span:nth-child(2) { transform: translateY(-4px) rotate(-4
 
 /* mobile menu */
 .mobile-menu {
-  position: fixed; inset: 0; z-index: 8900;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 8900;
   background: rgba(5, 5, 7, 0.92);
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8vh;
   opacity: 0; visibility: hidden; transition: opacity 0.45s, visibility 0.45s;
 }
+@supports (height: 100dvh) { .mobile-menu { height: 100dvh; } }
 body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .mm-links { display: flex; flex-direction: column; gap: 14px; text-align: center; }
 .mm-link {
@@ -254,6 +267,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 /* ════════════ HERO ════════════ */
 .hero {
+  min-height: 100vh;
   min-height: 100svh;
   display: flex; align-items: center;
   padding-top: calc(var(--nav-h) + 20px);
@@ -277,13 +291,19 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 
 .hero-title {
   font-family: var(--font-d); font-weight: 900;
-  font-size: clamp(34px, 7.4vw, 104px);
+  /* min sized so "ABDURRAHMAN" fits a 320px viewport — Unbounded is very wide */
+  font-size: clamp(16px, 6.8vw, 104px);
   line-height: 1.04; letter-spacing: -0.01em;
   text-transform: uppercase; margin-bottom: 28px;
 }
 .hero-title .line { display: block; overflow: hidden; padding-bottom: 0.08em; }
 .hero-title .line-1 {
-  background: linear-gradient(110deg, #fff 30%, var(--ac1) 70%, var(--ac2) 100%);
+  /* background and clip moved to .char to avoid WebKit bug hiding transformed children */
+}
+/* gradient must live on the chars themselves: transformed children
+   break background-clip:text on the parent (text turns invisible) */
+.hero-title .line-1 .char {
+  background: linear-gradient(115deg, #fff 25%, var(--ac1) 70%, var(--ac2) 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero-title .line-2 {
@@ -295,7 +315,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .hero-title .char { display: inline-block; will-change: transform; }
 
 .hero-roles {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   font-size: clamp(14px, 2vw, 19px); letter-spacing: 0.18em;
   color: var(--ac2); min-height: 1.8em; margin-bottom: 24px;
 }
@@ -381,6 +401,12 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 }
 .split-words .w-mask { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.12em; margin-bottom: -0.12em; }
 .split-words .w { display: inline-block; will-change: transform; }
+/* same background-clip:text fix for gradient headings that get word-split */
+.grad-text .w {
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* generic glass */
 .glass {
@@ -727,7 +753,7 @@ body.menu-open .mobile-menu { opacity: 1; visibility: visible; }
 .contact-section { text-align: left; }
 .contact-title {
   font-family: var(--font-d); font-weight: 900;
-  font-size: clamp(40px, 9vw, 120px); line-height: 1.02;
+  font-size: clamp(28px, 8.5vw, 120px); line-height: 1.02;
   letter-spacing: -0.01em; margin: 26px 0 26px; text-transform: uppercase;
 }
 .contact-sub { max-width: 540px; color: var(--muted); font-size: clamp(16px, 1.6vw, 18.5px); margin-bottom: 56px; }
@@ -797,13 +823,38 @@ body.no-anim .mm-link { opacity: 1; transform: none; }
   .project-flip .project-info { order: 1; }
   .hero-side { display: none; }
   .contact-row { flex-direction: column; align-items: flex-start; }
+
+  /* lighter GPU load on phones/tablets */
+  .orb { width: 240px; height: 240px; filter: blur(70px); opacity: 0.35; animation: none; }
+  .noise { animation: none; }
+  .glass, .nav.is-scrolled, .mobile-menu {
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
+  .nav { padding: 0 16px; }
+  .container { width: calc(100% - 36px); }
   .skills-grid, .more-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
-  .hero { padding-top: calc(var(--nav-h) + 8px); }
-  .ghost-word { font-size: 130px; }
+  .hero { padding-top: calc(var(--nav-h) + 8px); padding-bottom: 96px; }
+  .hero-badge { margin-bottom: 24px; font-size: 11px; padding: 7px 14px; }
+  .hero-tagline { margin-bottom: 32px; }
+  .hero-ctas { gap: 12px; }
+  .btn { padding: 13px 24px; font-size: 14px; }
+  .ghost-word { font-size: 110px; opacity: 0.8; }
+  .section-label { font-size: 11px; }
+  .tl-card { border-radius: 18px; }
+  .project { margin-bottom: 72px; }
+  .project-index { font-size: 64px; top: -0.4em; }
+  .contact-sub { margin-bottom: 40px; }
+  .contact-link { padding: 16px 18px; }
+  .footer-inner { justify-content: center; text-align: center; }
+  .pv-scene { aspect-ratio: auto; min-height: 280px; }
+}
+/* short viewports: keep the hero CTAs clear of the scroll hint */
+@media (max-height: 700px) and (max-width: 860px) {
+  .scroll-hint { display: none; }
 }
 
 /* ════════════ REDUCED MOTION ════════════ */
