@@ -54,7 +54,7 @@
 
         @media print {
             body { padding: 0; max-width: 100%; font-size: 10.5pt; }
-            @page { size: A4; margin: 20mm; }
+            @page { size: A4; margin: 13mm 20mm; }
             a { text-decoration: none !important; }
         }
     </style>
@@ -144,7 +144,7 @@
                 <span class="item-date">Erzurum, Türkiye</span>
             </div>
             <ul>
-                <li>AGNO: 3.23 / 4.0</li>
+                <li>AGNO: 3.32 / 4.0</li>
             </ul>
         </div>
     </section>
@@ -162,6 +162,18 @@
                 <li>Kullanıcıların doğal dil kullanarak veritabanını sorgulamasına olanak tanıyan, canlı ERP üzerinde çalışan bir yapay zeka katmanı geliştirildi.</li>
                 <li>Vektör tabanlı RAG alımı ve canlı grafikler için gerçek zamanlı SSE akışı (streaming) içeren bir NL2SQL veri hattı kuruldu.</li>
                 <li>Veri güvenliğini sağlamak için salt okunur (read-only) ve sadece SELECT işlemlerine izin veren "SQL Guard" uygulandı.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">AffuraBot (Telegram ERP Asistanı)</span>
+                <span class="item-date">2026</span>
+            </div>
+            <div class="item-subtitle">.NET 10, Telegram.Bot, REST API</div>
+            <ul>
+                <li>Canlı bir ERP sistemine stok, siparişler, iş emirleri ve üretim KPI'ları dahil 8 modül üzerinden, satır içi (inline) butonlu menülerle mobil erişim sağlayan Arapça arayüzlü bir Telegram botu geliştirildi.</li>
+                <li>Mevcut REST API backend'e sıfır değişiklikle kullanıldı; kullanıcı ID beyaz listesiyle erişim kontrolü sağlandı ve iş mantığı mock tabanlı birim testleriyle doğrulandı.</li>
             </ul>
         </div>
 

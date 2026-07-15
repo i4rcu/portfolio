@@ -30,7 +30,7 @@ Software Engineer specializing in full-stack development, building enterprise-gr
 
 **Atatürk University** | Erzurum, Türkiye
 *B.Sc. in Software Engineering* | 2022 – 2026
-- Cumulative GPA: 3.23 / 4.0
+- Cumulative GPA: 3.32 / 4.0
 
 ## SELECTED PROJECTS
 
@@ -38,6 +38,10 @@ Software Engineer specializing in full-stack development, building enterprise-gr
 - Developed an AI layer for a live ERP enabling users to query the database using plain language.
 - Built an NL2SQL pipeline with vector-based RAG retrieval and real-time SSE streaming for live charts.
 - Implemented a "SQL Guard" to ensure a read-only, SELECT-only execution context for data security.
+
+**AffuraBot (Telegram ERP Assistant)** | *.NET 10, Telegram.Bot, REST API* | 2026
+- Built an Arabic-language Telegram bot providing mobile access to a live ERP across 8 modules — inventory, orders, work orders, and production KPIs — via inline-keyboard drill-down menus.
+- Consumed the existing REST API with zero backend changes, enforcing user-ID whitelist access control and verifying the logic with mock-based unit tests.
 
 **ERPV3 — AffuraPlast** | *.NET 8, Clean Architecture, SignalR, EF Core, Flutter* | 2026
 - Engineered a full ERP system managing sales, procurement, work orders, and quality gates for a plastics factory.

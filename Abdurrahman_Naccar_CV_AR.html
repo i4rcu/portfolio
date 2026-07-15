@@ -57,7 +57,7 @@
 
         @media print {
             body { padding: 0; max-width: 100%; font-size: 10.5pt; }
-            @page { size: A4; margin: 20mm; }
+            @page { size: A4; margin: 16mm 20mm; }
             a { text-decoration: none !important; }
         }
     </style>
@@ -149,7 +149,7 @@
                 <span class="item-date">أرضروم، تركيا</span>
             </div>
             <ul>
-                <li>المعدل التراكمي: 3.23 / 4.0</li>
+                <li>المعدل التراكمي: 3.32 / 4.0</li>
             </ul>
         </div>
     </section>
@@ -167,6 +167,18 @@
                 <li>تطوير طبقة ذكاء اصطناعي لنظام ERP مباشر يتيح للمستخدمين الاستعلام عن قاعدة البيانات باستخدام اللغة الطبيعية.</li>
                 <li>بناء مسار بيانات NL2SQL مع استرجاع RAG المستند إلى المتجهات وبث SSE في الوقت الفعلي للمخططات الحية.</li>
                 <li>تنفيذ "SQL Guard" لضمان بيئة تنفيذ للقراءة فقط (SELECT-only) لضمان أمن البيانات.</li>
+            </ul>
+        </div>
+
+        <div class="section-item">
+            <div class="item-header">
+                <span class="item-title">AffuraBot (مساعد ERP عبر تيليجرام)</span>
+                <span class="item-date">2026</span>
+            </div>
+            <div class="item-subtitle" dir="ltr" style="text-align: right;">.NET 10, Telegram.Bot, REST API</div>
+            <ul>
+                <li>تطوير بوت تيليجرام بواجهة عربية بالكامل يتيح الوصول من الهاتف إلى نظام ERP مباشر عبر 8 وحدات (المخزون، الطلبات، أوامر العمل، مؤشرات الإنتاج) من خلال قوائم تفاعلية بأزرار مدمجة.</li>
+                <li>الاعتماد على واجهة REST API القائمة دون أي تعديل على الواجهة الخلفية، مع قائمة سماح لمعرّفات المستخدمين للتحكم في الوصول والتحقق من المنطق عبر اختبارات وحدة بالمحاكاة.</li>
             </ul>
         </div>
 
